@@ -8,5 +8,7 @@
 </head>
 <body>
     hola <a href="reporte.php" target="_blank">imprimir</a>
+    <br>
+    ejemplo 2 <a href="reporteGeneralPlantilla.php" target="_blank">imprimir reporte</a>
 </body>
 </html>
