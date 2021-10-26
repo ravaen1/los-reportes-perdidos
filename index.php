@@ -7,6 +7,6 @@
     <title>reporte en pdf</title>
 </head>
 <body>
-    hola <a href="reporte.php">imprimir</a>
+    hola <a href="reporte.php" target="_blank">imprimir</a>
 </body>
 </html>
