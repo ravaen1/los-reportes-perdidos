@@ -13,6 +13,17 @@ class PDF extends FPDF {
         $this->Cell(80);
         $this->Cell(30,10,'area de perdidas',0,1,'C');
     }
+
+    function Footer()
+    {
+        $this->SetY(-18);
+        $this->SetFont('Arial','I',12);
+        $this->AddLink();
+        $this->Cell(5,10,'www.electrodunas.com',0,0,'L');
+        $this->SetFont('Arial','I',10);
+        $this->Cell(0,10,'pagina '.$this->PageNo().' de {nb}',0,0,'C');
+        
+    }
 }
 
 ?>
