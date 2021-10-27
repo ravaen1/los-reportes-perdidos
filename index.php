@@ -1,9 +1,12 @@
 <?php
 include('conexionbd.php');
+
+$sqlcategorias = 'SELECT * FROM categorias';
+$resultadocategorias = $conexion->query($sqlcategorias);
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <title>REPORTES PDF</title>
     <!-- Required meta tags -->
@@ -16,13 +19,18 @@ include('conexionbd.php');
   </head>
   <body>
       <div class="container"></div>
-      <h1 align="center">EJEMPLO DE REPORTES PDF</h1>
+      <h1 align="center">EJEMPLO DE REPORTES PDF</h1> 
       <br>
       <form action="#" method="POST" class="form-inline">
-          <label for="" class="my-1 mr-2">categoria</label>
+          <label for="" class="my-1 mr-2" >categoria</label>
           <select name="cat" class="`custom-select my-1 mr-sm-2" required>
               <option value="">seleccionar</option>
+              <?php foreach ($resultadocategorias as $nombrecategorias): ?>
+                <option value="<?php echo $nombrecategorias['IdCategoria']; ?> "><?php echo $nombrecategorias['NombreC']; ?></option>
+                <?php endforeach ?>
           </select>
+
+          <button type="submit" name="mostrar" class="btn btn-primary my-1">mostrar</button>
 
       </form>
       
