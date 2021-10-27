@@ -1,3 +1,7 @@
+<?php
+include('conexionbd.php');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
