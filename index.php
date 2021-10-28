@@ -37,8 +37,8 @@ $resultadocategorias = $conexion->query($sqlcategorias);
       if (isset($_POST['mostrar'])) {
           
            $categoriaseleccionada = $_POST['cat'];
-           $sqlproductos = 'SELECT p.CodigoP, p.NombreP, p.Precio, c.IdCategoria FROM productos AS p INNER JOIN categorias AS c
-                                    ON p.IdCategoria = c.IdCategoria WHERE C.IdCategoria = $categoriaseleccionada ';
+           $sqlproductos = "SELECT p.CodigoP, p.NombreP, p.Precio, c.IdCategoria FROM productos AS p INNER JOIN categorias AS c
+                                    ON p.IdCategoria = c.IdCategoria WHERE C.IdCategoria = $categoriaseleccionada ";
 
             $resultadosproductos = $conexion->query($sqlproductos)                        
 
@@ -46,11 +46,33 @@ $resultadocategorias = $conexion->query($sqlcategorias);
 
       <h4 alingn ="center">========= lista de productos</h4>
 
+      <table>
+          <thead>
+              <tr>
+                  <th>codigo</th>
+                  <th>producto</th>
+                  <th>precio</th>
+              </tr>
+          </thead>
+          <tbody>
+              <?php 
+              while ($registro = $resultadosproductos->fetch_array()){
+                  echo "<tr>
+                            <td>".$registro['CodigoP']."</td>
+                            <td>".$registro['NombreP']."</td>
+                            <td>".$registro['Precio']."</td>
+                        </tr>";
+              }
+              $conexion->close();
+              ?>
+          </tbody>
+      </table>
+
        <?php
       } else {
           echo'error';
       }
-      
+
         ?>
 
     <!-- Bootstrap JavaScript Libraries -->
