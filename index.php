@@ -44,9 +44,9 @@ $resultadocategorias = $conexion->query($sqlcategorias);
 
       ?>
 
-      <h4 alingn ="center">========= lista de productos</h4>
+      <h4 alingn ="center">========= lista de productos==========</h4>
 
-      <table>
+      <table class="table table-hover">
           <thead>
               <tr>
                   <th>codigo</th>
