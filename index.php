@@ -37,13 +37,21 @@ $resultadocategorias = $conexion->query($sqlcategorias);
       if (isset($_POST['mostrar'])) {
           
            $categoriaseleccionada = $_POST['cat'];
-           echo'categorias', $categoriaseleccionada;
+           $sqlproductos = 'SELECT p.CodigoP, p.NombreP, p.Precio, c.IdCategoria FROM productos AS p INNER JOIN categorias AS c
+                                    ON p.IdCategoria = c.IdCategoria WHERE C.IdCategoria = $categoriaseleccionada ';
 
+            $resultadosproductos = $conexion->query($sqlproductos)                        
+
+      ?>
+
+      <h4 alingn ="center">========= lista de productos</h4>
+
+       <?php
       } else {
           echo'error';
       }
       
-      ?>
+        ?>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
