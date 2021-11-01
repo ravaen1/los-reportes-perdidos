@@ -68,6 +68,9 @@ $resultadocategorias = $conexion->query($sqlcategorias);
           </tbody>
       </table>
 
+      <a class="nav-link" href="#"><i class="fas fa-print"></i>imprimir</a>
+       
+
        <?php
       } else {?>
           <table class="table table-hover">
