@@ -68,7 +68,7 @@ $resultadocategorias = $conexion->query($sqlcategorias);
           </tbody>
       </table>
 
-      <a class="nav-link" href="#"><i class="bi bi-printer"></i>imprimir</a>
+      <a class="nav-link" href="#"><i class="bi bi-printer"></i> imprimir</a>
        
 
        <?php
