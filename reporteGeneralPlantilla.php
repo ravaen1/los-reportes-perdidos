@@ -26,10 +26,10 @@ class PDF extends FPDF {
     }
 }
 
-$pdf = new PDF();
+$pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B','18');
-$pdf->Cell(50,12,'hola mundo',1,1,'C');
+$pdf->Cell(70,12,'123',1,1,'C');
 $pdf->Output();
 
 ?>
